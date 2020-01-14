@@ -10,7 +10,9 @@ const app = express()
 
 app.use(bodyParser.json())
 
-app.get('/health', api.getHealth)
+app.get('/:id/*', api.getStudent)
+app.put('/:id/*', api.modifyStudent)
+app.delete('/:id/*', api.deleteStudent)
 
 app.use(middleware.handleError)
 app.use(middleware.notFound)
